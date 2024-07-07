@@ -1,0 +1,4 @@
+APP_NAME = 'BMS LOGISTICS'
+EMAIL = 'bmslogistics01@gmail.com'
+PHONE = '090888888888'
+SERVER_URL = 'http://127.0.0.1:5000'

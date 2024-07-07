@@ -1,0 +1,94 @@
+{% extends 'layout.html' %}
+{% block content %}
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+        {% include 'topbar.html' %}
+
+        <!-- Header Start -->
+        <div class="container-fluid bg-breadcrumb">
+            <div class="container text-center py-5" style="max-width: 900px;">
+                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">{{ title.capitalize() }} | Register</h4>
+                <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+                    <li class="breadcrumb-item"><a href="{{url_for('home_bp.index')}}">Home</a></li>
+                    <li class="breadcrumb-item active text-primary">Register</li>
+                </ol>    
+            </div>
+        </div>
+        <!-- Header End -->
+
+        <!-- Contact Start -->
+        <div class="container-fluid contact py-5">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-xl-12 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="bg-secondary p-5 rounded">
+                            <h4 class="text-primary mb-4">Create an Account to get started</h4>
+                            <form action="{{ url_for('auth_bp.register') }}" method="POST" id="passwordForm">
+                                <div class="row g-4">
+                                    <div class="col-lg-12 col-xl-12">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                                            <label for="name">Your Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-xl-12">
+                                        <div class="form-floating">
+                                            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                                            <label for="email">Your Email</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-xl-12">
+                                        <div class="form-floating">
+                                            <input type="phone" class="form-control" id="phone" name="phone" placeholder="Phone" required>
+                                            <label for="phone">Your Phone</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-xl-12">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="Address" name="address" placeholder="Address" required>
+                                            <label for="Address">Your Address</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-xl-6">
+                                        <div class="form-floating">
+                                            <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                                            <label for="Password">Your Password</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-xl-6">
+                                        <div class="form-floating">
+                                            <input type="password" class="form-control" id="confirmPassword" placeholder="Password" required>
+                                            <label for="Password">Comfirm Password</label>
+                                        </div>
+                                    </div>
+                                    <br>
+                                        <span id="message" class="error"></span>
+                                    <br>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-light w-100 py-3">Register</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div> 
+                    
+                    
+
+                </div>
+            </div>
+        </div>
+        <!-- Contact End -->
+
+        {% include 'footer.html' %}
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-secondary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+      
+{% endblock %}
